@@ -6,8 +6,16 @@
   var T = '#1c1712', P = '#efe3c6', L = '#8a1c14';
   var H = 'url(#hach)', HX = 'url(#hachx)';
 
+  /* Retrato em gravura (imagem gerada para este projeto) recortado no oval, por cima da
+     silhueta desenhada, que fica de reserva se a imagem não carregar. */
+  function gravado(nome) {
+    return '<image href="img/retrato-' + nome + '.webp" x="-20" y="0" width="240" height="240" clip-path="url(#oval-retrato)" preserveAspectRatio="xMidYMid slice"/>' +
+      '<ellipse cx="100" cy="120" rx="94" ry="114" fill="none" stroke="' + T + '" stroke-width="7"/><ellipse cx="100" cy="120" rx="85" ry="105" fill="none" stroke="' + T + '" stroke-width="2"/>';
+  }
+
   var DEFS = [
     '<defs>',
+    '<clipPath id="oval-retrato"><ellipse cx="100" cy="120" rx="86" ry="106"/></clipPath>',
     '<pattern id="hach" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><rect width="7" height="7" fill="' + P + '"/><line x1="0" y1="0" x2="0" y2="7" stroke="' + T + '" stroke-width="3"/></pattern>',
     '<pattern id="hachx" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><rect width="6" height="6" fill="' + P + '"/><path d="M0 0V6M0 0H6" stroke="' + T + '" stroke-width="3.4"/></pattern>',
     '<pattern id="ceu" width="8" height="6" patternUnits="userSpaceOnUse"><rect width="8" height="6" fill="#2a2219"/><line x1="0" y1="1" x2="8" y2="1" stroke="' + P + '" stroke-width="1" stroke-opacity=".3"/></pattern>',
@@ -81,6 +89,7 @@
     '<rect x="88" y="138" width="24" height="30" fill="' + T + '"/>',
     '<circle cx="100" cy="108" r="38" fill="' + T + '"/><circle cx="100" cy="58" r="20" fill="' + T + '"/>',
     '<path d="M84 166L100 180L116 166" stroke="' + P + '" stroke-width="5" fill="none"/>',
+    gravado('ana'),
     '</symbol>',
     '<symbol id="retrato-leo" viewBox="0 0 200 240">',
     '<ellipse cx="100" cy="120" rx="94" ry="114" fill="' + P + '" stroke="' + T + '" stroke-width="7"/><ellipse cx="100" cy="120" rx="82" ry="102" fill="none" stroke="' + T + '" stroke-width="2"/>',
@@ -89,6 +98,7 @@
     '<circle cx="100" cy="104" r="40" fill="' + T + '"/>',
     '<path d="M58 100C54 60 84 50 108 54C136 56 148 78 142 104Z" fill="' + T + '"/>',
     '<path d="M100 172L78 160L78 184ZM100 172L122 160L122 184Z" fill="' + L + '" stroke="' + P + '" stroke-width="3"/><circle cx="100" cy="172" r="6" fill="' + L + '" stroke="' + P + '" stroke-width="2"/>',
+    gravado('leo'),
     '</symbol>',
     '<symbol id="retrato-bia" viewBox="0 0 200 240">',
     '<ellipse cx="100" cy="120" rx="94" ry="114" fill="' + P + '" stroke="' + T + '" stroke-width="7"/><ellipse cx="100" cy="120" rx="82" ry="102" fill="none" stroke="' + T + '" stroke-width="2"/>',
@@ -96,6 +106,7 @@
     '<path d="M40 208C44 174 68 162 100 162C132 162 156 174 160 208C140 224 60 224 40 208Z" fill="' + T + '"/>',
     '<path d="M132 62L152 48L154 72ZM132 62L116 44L112 68Z" fill="' + L + '" stroke="' + P + '" stroke-width="3"/>',
     '<path d="M80 172C92 182 108 182 120 172" stroke="' + P + '" stroke-width="4" fill="none"/>',
+    gravado('bia'),
     '</symbol>',
 
     /* Lampião a gás (corpo); a chama é um elemento à parte */

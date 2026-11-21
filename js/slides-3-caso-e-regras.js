@@ -2,6 +2,9 @@
 (function () {
   'use strict';
 
+  /* Da abertura do caso em diante (a segunda metade), as páginas saem em layout de jornal. */
+  window.LAYOUT_ATUAL = 'jornal';
+
   var CADERNO = `% Caderno do caso: A noite do crime
 
 gosta(ana, pizza).
@@ -19,11 +22,12 @@ estava(bia, cozinha).`;
     etapas: 2,
     corpo: `
       <div class="crime">
-        ${pasta({
-          tag: 'div', aba: 'Caso n.º 1', classe: 'crime__pasta', capa: '<h3>A noite do crime</h3>',
-          dentro: '<div class="crime__mesa">' + icone('prato', 'crime__prato') + icone('pizza', 'crime__pizza') + '<span class="crime__sumiu">?</span></div>'
-        })}
-        ${ARTE.gravura({ w: 1700, h: 260, classe: 'parte__faixa', lua: [860, 80, 52], torre: .46, semente: 1225 })}
+        <figure class="crime__foto">
+          <img src="img/festa.webp" width="1344" height="752" alt="Gravura: a mesa da festa de Natal, com a última fatia de pizza no prato, sob o lampião">
+          <img class="crime__foto-vazia" src="img/festa-vazia.webp" width="1344" height="752" alt="" aria-hidden="true">
+          <figcaption>A mesa da festa de Natal da turma.</figcaption>
+        </figure>
+        ${ARTE.gravura({ w: 1780, h: 220, classe: 'crime__faixa', lua: [300, 70, 46], torre: .7, semente: 1225 })}
         <div class="crime__breu" aria-hidden="true"></div>
         <div class="crime__texto">
           <p class="kicker" data-e>Festa de Natal da turma</p>

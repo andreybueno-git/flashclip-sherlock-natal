@@ -1,0 +1,62 @@
+/* Segunda metade da apresentação: a página deixa de ser revista e vira jornal de época.
+   Cabeçalho com o nome do jornal em letra gótica, manchete em caixa alta, colunas separadas
+   por fio e gravuras como as "fotos" da edição. Vale para os slides com a classe slide--jornal. */
+
+.slide--jornal { background: var(--manchas), var(--grao), linear-gradient(180deg, #ece4d0, #e5dbc3 50%, #ddd0b3); }
+.slide--jornal .folha, .slide--jornal .cena { inset: 20px 34px; border: 0; outline: 0; }
+.slide--jornal .folha { padding: 0 44px; }
+
+/* cabeçalho do jornal */
+.jornal__topo { margin: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 30px; padding: 12px 4px 6px; border-top: 4px solid var(--tinta); border-bottom: 6px double var(--tinta); font: 800 15px/1 var(--f-titulo); letter-spacing: .22em; text-transform: uppercase; color: var(--tinta-2); }
+.jornal__topo b { font: 700 68px/1 var(--f-jornal); letter-spacing: 0; text-transform: none; color: var(--tinta); white-space: nowrap; }
+.jornal__topo span { padding-bottom: 14px; }
+.jornal__topo span:last-child { text-align: right; }
+
+/* página interna */
+.slide--jornal .cab { position: relative; justify-content: center; min-height: 44px; padding: 9px 0 7px; border-bottom: 2px solid var(--tinta); }
+.slide--jornal .cab .kicker { padding: 0; color: var(--tinta); font-size: 19px; letter-spacing: .32em; }
+.slide--jornal .cab .kicker::before { display: none; }
+.slide--jornal .cab .selo { position: absolute; right: 0; top: 5px; padding: 8px 12px 6px; font-size: 14px; background: #e9e0ca; }
+.slide--jornal .desafio .cab .kicker { background: var(--tinta); color: var(--papel-claro); padding: 8px 18px 6px; border-radius: 0; }
+.slide--jornal .titulo { margin: 14px 0 0; padding: 0 0 12px; text-align: center; text-transform: uppercase; font-size: 58px; line-height: 1.05; letter-spacing: .012em; border-bottom: 2px solid var(--tinta); }
+.slide--jornal .titulo::after { display: none; }
+.slide--jornal .titulo--longo { font-size: 46px; }
+.slide--jornal .corpo { padding: 16px 0 14px; }
+.slide--jornal .pe { height: 54px; border-top: 6px double var(--tinta); }
+
+/* colunas: caixa sem moldura, com fio em cima e fio entre colunas */
+.slide--jornal .cartao { background: transparent; border: 0; border-top: 5px double var(--tinta); padding: 16px 24px 18px; }
+.slide--jornal .grade > .cartao + .cartao { border-left: 1px solid var(--tinta); }
+.slide--jornal .g1 > .cartao + .cartao { border-left: 0; }
+.slide--jornal .cartao--forte { border-top-color: var(--lacre); }
+.slide--jornal .nota { background: transparent; border: 0; border-top: 2px solid var(--tinta); border-bottom: 2px solid var(--tinta); padding: 14px 4px; }
+.slide--jornal .deduz--culpado::after { inset: -4px; border-width: 4px; border-radius: 0; }
+.slide--jornal .erros li, .slide--jornal .ff li, .slide--jornal .respostas li { background: transparent; border: 0; border-bottom: 1px solid var(--tinta); }
+
+/* primeira página (cenas) */
+.slide--jornal .cena .jornal__topo { position: absolute; left: 30px; right: 30px; top: 0; }
+.jornal__extra { position: absolute; left: 30px; right: 30px; top: 110px; margin: 0; padding: 9px 0 7px; background: var(--tinta); color: var(--papel-claro); text-align: center; font: 800 19px/1 var(--f-titulo); letter-spacing: .7em; text-transform: uppercase; }
+.slide--jornal .cena h1 { text-transform: uppercase; letter-spacing: -.005em; }
+.slide--jornal .fim h1 { text-transform: none; }
+
+.slide--jornal .crime__texto { left: 40px; top: 176px; width: 760px; }
+.slide--jornal .crime h1 { font-size: 112px; }
+.slide--jornal .crime .sub { font-size: 38px; padding-top: 22px; border-top: 5px double var(--tinta); }
+.slide--jornal .crime__texto { width: 840px; }
+.crime__faixa { position: absolute; left: 40px; right: 40px; bottom: 30px; height: 212px; }
+.crime__foto { position: absolute; right: 40px; top: 182px; width: 850px; margin: 0; }
+.crime__foto img { display: block; width: 100%; height: auto; border: 3px solid var(--tinta); }
+.crime__foto-vazia { position: absolute; left: 0; top: 0; opacity: 0; transition: opacity .01s .3s; }
+.e1 .crime__foto-vazia { opacity: 1; }
+.crime__foto figcaption { margin-top: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--tinta); font: italic 400 24px/1.3 var(--f-texto); color: var(--tinta-2); text-align: center; }
+
+.slide--jornal .resolvido__texto { left: 40px; top: 176px; }
+.slide--jornal .resolvido__retrato { right: 190px; top: 214px; width: 400px; height: 480px; }
+.slide--jornal .resolvido__retrato .retrato { width: 400px; height: 480px; }
+.resolvido__prova { position: absolute; left: -210px; bottom: -70px; width: 300px; height: 300px; }
+.resolvido__prova .resolvido__pizza { position: absolute; left: 60px; bottom: 30px; transition: opacity .6s var(--sai); }
+.resolvido__prova .tres-d { inset: 0; }
+.resolvido__prova .tres-d model-viewer { filter: sepia(.25) contrast(1.05); }
+.resolvido__prova.tem-3d .resolvido__pizza { opacity: 0; }
+.slide--jornal .fim__texto { left: 40px; top: 196px; }
+.slide--jornal .capa__gravura { right: 40px; top: 180px; width: 560px; height: 710px; }

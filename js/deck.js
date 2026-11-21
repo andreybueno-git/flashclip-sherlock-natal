@@ -66,7 +66,7 @@
   function montar() {
     SL.forEach(function (s) {
       var el = document.createElement('section');
-      el.className = 'slide slide--' + s.tipo;
+      el.className = 'slide slide--' + s.tipo + (s.layout ? ' slide--' + s.layout : '');
       el.dataset.id = s.id;
       el.setAttribute('aria-roledescription', 'slide');
       el.innerHTML = s.html;
@@ -223,7 +223,7 @@
       li.dataset.id = s.id;
       li.tabIndex = -1;
       li.innerHTML =
-        '<div class="mini__quadro" aria-hidden="true"><div class="mini__slide slide slide--' + s.tipo + ' miniatura ativa">' + s.html + '</div></div>' +
+        '<div class="mini__quadro" aria-hidden="true"><div class="mini__slide slide slide--' + s.tipo + (s.layout ? ' slide--' + s.layout : '') + ' miniatura ativa">' + s.html + '</div></div>' +
         '<div class="mini__pe"><span class="mini__n"></span><span class="mini__t"></span></div>' +
         '<div class="mini__acoes">' +
         '<button type="button" tabindex="-1" data-acao="antes" title="Mover para antes">&#9664;</button>' +

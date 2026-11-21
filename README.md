@@ -62,13 +62,20 @@ Avançar e Voltar e o nome do slide atual e do próximo.
 - `js/slides-*.js`: o conteúdo dos 61 slides. Cada slide tem um `id` fixo; não troque os ids,
   é por eles que a ordem escolhida é guardada.
 - `quiz.html`, `jogar.html`, `controle.html`, `js/quiz-*.js`, `js/controle-*.js`, `css/quiz.css`.
-- `fontes/`: Besley, Libre Baskerville, IBM Plex Mono e Charm (SIL OFL 1.1; licenças e
-  procedência na própria pasta).
+- `fontes/`: Besley, Libre Baskerville, IBM Plex Mono, Charm e UnifrakturCook, esta só no nome
+  do jornal (SIL OFL 1.1; licenças e procedência na própria pasta).
+- Layout em duas metades: do slide 1 ao 29 a página é de revista; do slide 30 ("A noite do
+  crime") em diante vira jornal de época, "O Correio de Baker Street", com manchete e colunas
+  (`css/jornal.css`). O layout acompanha o slide, não a posição: se você mudar a ordem, cada
+  slide leva o seu.
+- Gravuras geradas no Higgsfield para este projeto: os retratos de Ana, Leo e Bia e a mesa da
+  festa em duas versões (com a fatia e com o prato vazio), em `img/`. São pessoas inventadas.
 - Pastas confidenciais em 3D (roteiro, suspeitos e fichas): começam fechadas, com o carimbo na
   capa, e cada seta para a frente abre uma. A do caso abre sozinha ao entrar no slide.
-- `js/tres-d.js` e `js/modelo-busto.js`: o busto do detetive em 3D que gira na capa (modelo GLB
-  gerado no Higgsfield a partir de imagem própria, embutido em base64 para abrir também direto
-  do arquivo). Se o 3D não carregar, fica a silhueta desenhada.
+- `js/tres-d.js`, `js/modelo-busto.js` e `js/modelo-pizza.js`: as peças em 3D, o busto do
+  detetive que gira na capa e a fatia de pizza ao lado do culpado (modelos GLB gerados no
+  Higgsfield a partir de imagem própria, embutidos em base64 para abrir também direto do
+  arquivo). Se o 3D não carregar, fica o desenho.
 - `vendor/`: `mqtt.min.js` (MQTT.js 5.16.1, MIT), `qrcode.js` (qrcode-generator 1.5.2, MIT) e
   `model-viewer-umd.min.js` (@google/model-viewer 4.4.0, Apache-2.0).
 - `img/ambiente-prolog.webp`: a captura do ambiente, tirada do material.

@@ -66,10 +66,15 @@
   };
   window.SELOS = SELOS;
 
+  /* Na segunda metade o layout muda de revista para jornal: os arquivos de slides ligam isso
+     com window.LAYOUT_ATUAL = 'jornal' e daí em diante cada página ganha o cabeçalho do jornal. */
+  var JORNAL = '<p class="jornal__topo" aria-hidden="true"><span>Londres · Edição de Natal</span><b>O Correio de Baker Street</b><span>Preço: um pêni</span></p>';
+
   window.folha = function (id, o) {
-    o.id = id; o.tipo = 'folha';
+    o.id = id; o.tipo = 'folha'; o.layout = window.LAYOUT_ATUAL || '';
     o.html =
       '<div class="folha ' + (o.classe || '') + '">' +
+      (o.layout === 'jornal' ? JORNAL : '') +
       '<header class="cab"><p class="kicker">' + o.kicker + '</p>' + (o.selo ? SELOS[o.selo] : '') + '</header>' +
       '<h2 class="titulo' + (o.longo ? ' titulo--longo' : '') + '">' + o.titulo + '</h2>' +
       '<div class="corpo ' + (o.arranjo || '') + '">' + o.corpo + '</div>' +
@@ -79,9 +84,10 @@
   };
 
   window.cena = function (id, o) {
-    o.id = id; o.tipo = 'cena';
+    o.id = id; o.tipo = 'cena'; o.layout = window.LAYOUT_ATUAL || '';
     o.html = '<div class="cena ' + (o.classe || '') + '">' +
-      '<p class="cena__topo" aria-hidden="true"><span>FlashClip</span><b>Edição de Natal</b><span>Do algoritmo ao Prolog</span></p>' +
+      (o.layout === 'jornal' ? JORNAL + '<p class="jornal__extra" aria-hidden="true">Edição extra</p>'
+        : '<p class="cena__topo" aria-hidden="true"><span>FlashClip</span><b>Edição de Natal</b><span>Do algoritmo ao Prolog</span></p>') +
       o.corpo + '</div>';
     window.SLIDES.push(o);
   };

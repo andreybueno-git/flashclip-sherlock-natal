@@ -186,7 +186,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
         <div class="resolvido__retrato" data-passo="1" aria-hidden="true">
           ${icone('retrato-leo', 'retrato')}
           <span class="carimbo">${icone('lacre')}<b>Caso<br>resolvido</b></span>
-          ${icone('pizza', 'resolvido__pizza')}
+          <span class="resolvido__prova">${icone('pizza', 'resolvido__pizza')}<div class="tres-d" data-3d="pizza"></div></span>
         </div>
       </div>`
   });

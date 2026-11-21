@@ -17,7 +17,7 @@
         </div>
         <div class="capa__gravura" data-e>
           ${ARTE.gravura({ w: 640, h: 780, lua: [330, 300, 205], detetive: [40, 129, .93], torre: .03 })}
-          <div class="tres-d" data-3d></div>
+          <div class="tres-d" data-3d="busto"></div>
           ${icone('lupa', 'capa__lupa')}
         </div>
       </div>`

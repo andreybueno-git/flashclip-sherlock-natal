@@ -79,7 +79,17 @@
   font-display: swap;
 }
 
+/* ---------- Cabeçalho de jornal: UnifrakturCook (só o nome do jornal) ---------- */
+@font-face {
+  font-family: "UnifrakturCook";
+  src: url("../fontes/unifrakturcook-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --f-jornal: "UnifrakturCook", "Besley", Georgia, serif;
   --f-titulo: "Besley", "Superclarendon", "Clarendon", "Rockwell", Georgia, "Times New Roman", serif;
   --f-texto: "Libre Baskerville", "Baskerville", "Baskerville Old Face", Georgia, "Times New Roman", serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
