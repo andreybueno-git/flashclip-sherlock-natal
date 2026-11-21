@@ -10,13 +10,30 @@
 <link rel="stylesheet" href="css/slides.css">
 <link rel="stylesheet" href="css/jornal.css">
 <link rel="stylesheet" href="css/pagina.css">
+<link rel="stylesheet" href="css/londres.css">
 <link rel="stylesheet" href="css/organizar.css">
+<script>
+/* A abertura (a porta da 221B) só aparece quando a apresentação abre no começo. Se o roteiro dela
+   não carregar, a página segue sem abertura. */
+(function () {
+  var h = location.hash, r = document.documentElement;
+  if ((h === '' || h === '#' || h === '#/capa') && !/[?&]entrada=0(?:&|$)/.test(location.search)) {
+    r.classList.add('com-entrada');
+    setTimeout(function () { if (!window.LONDRES) r.classList.remove('com-entrada'); }, 4000);
+  }
+})();
+</script>
 </head>
 <body>
 
-<div id="mundo" class="mundo" data-lugar="rua" aria-hidden="true"></div>
+<div id="mundo" class="mundo" data-lugar="rua" aria-hidden="true">
+  <div class="mundo__viagem"><div class="mundo__londres"></div></div>
+  <div class="mundo__nevoa"></div>
+  <canvas id="neve" class="mundo__neve"></canvas>
+</div>
 
 <main id="palco" class="palco" aria-label="Apresentação"></main>
+<div id="figurinhas" class="figurinhas" aria-hidden="true"></div>
 
 <nav id="barra" class="barra" aria-label="Controles da apresentação">
   <div class="barra__grupo">
@@ -33,7 +50,7 @@
     <button type="button" id="b-avancar" aria-label="Avançar">&#9654;</button>
   </div>
 </nav>
-<div id="progresso" class="progresso" aria-hidden="true"><i></i></div>
+<div id="progresso" class="progresso" aria-hidden="true"><i></i><img class="progresso__carruagem" src="img/fig-carruagem.webp" width="440" height="287" alt=""></div>
 
 <section id="organizar" class="org" hidden aria-label="Organizar a ordem dos slides">
   <header class="org__topo">
@@ -66,6 +83,7 @@
       <dt><kbd>M</kbd></dt><dd>Modo foto: na capa, troca o busto em 3D pelo retrato do detetive com a coruja</dd>
       <dt><kbd>F</kbd></dt><dd>Tela cheia</dd>
       <dt><kbd>?</kbd></dt><dd>Abrir e fechar esta ajuda</dd>
+      <dt>Figurinhas</dt><dd>Clique para balançar, arraste para colar em outro lugar</dd>
     </dl>
     <p>A ordem que você escolher fica guardada neste navegador. O quiz é opcional: só abre pelo botão Quiz.</p>
     <button type="button" id="ajuda-fechar">Fechar</button>
@@ -90,6 +108,30 @@
   </div>
 </div>
 
+<section id="entrada" class="entrada" aria-label="Abertura: Baker Street, 221B">
+  <div class="entrada__cena">
+    <img class="entrada__rua" src="img/londres-porta.webp" width="2240" height="1267" alt="Rua de Londres à noite, com neve e um lampião aceso. Ao centro, a porta preta da casa 221B, com uma guirlanda de Natal.">
+    <button type="button" id="entrada-porta" class="entrada__porta" aria-label="Bater à porta e começar a apresentação"><span class="entrada__anel" aria-hidden="true"></span></button>
+  </div>
+  <div class="entrada__sombra" aria-hidden="true"></div>
+  <div class="entrada__texto">
+    <p class="entrada__kicker">FlashClip · Edição de Natal</p>
+    <h1>Do algoritmo ao <em>Prolog</em></h1>
+    <p class="entrada__onde">Londres, Baker Street, 221B. Véspera de Natal.</p>
+  </div>
+  <div class="entrada__figs" aria-hidden="true">
+    <img src="img/fig-chapeu.webp" alt="" style="left:2.6vw;bottom:17vh;--r:-12deg;--i:0">
+    <img src="img/fig-lupa.webp" alt="" style="left:10.5vw;bottom:5vh;--r:10deg;--i:1">
+    <img src="img/fig-big-ben.webp" alt="" style="right:3vw;top:10vh;--r:7deg;--i:2;width:clamp(48px,6vw,120px)">
+    <img src="img/fig-cha.webp" alt="" style="right:10.5vw;top:20vh;--r:-9deg;--i:3">
+    <img src="img/fig-coruja.webp" alt="" style="right:11vw;bottom:13vh;--r:8deg;--i:4">
+    <img src="img/fig-onibus.webp" alt="" style="right:2.4vw;bottom:24vh;--r:-7deg;--i:5">
+  </div>
+  <button type="button" id="entrada-dica" class="entrada__dica">Bata à porta para entrar <kbd>Enter</kbd></button>
+  <button type="button" id="entrada-pular" class="entrada__pular">Pular a abertura <kbd>Esc</kbd></button>
+  <div class="entrada__luz" aria-hidden="true"></div>
+</section>
+
 <script src="vendor/qrcode.js"></script>
 <script src="js/arte.js"></script>
 <script src="js/estampas.js"></script>
@@ -98,7 +140,9 @@
 <script src="js/slides-2-prolog.js"></script>
 <script src="js/slides-3-caso-e-regras.js"></script>
 <script src="js/slides-4-consultas-e-desfecho.js"></script>
+<script src="js/figurinhas.js"></script>
 <script src="js/deck.js"></script>
+<script src="js/londres.js"></script>
 <script src="js/controle-apresentador.js"></script>
 <script src="js/tres-d.js"></script>
 </body>

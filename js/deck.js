@@ -165,7 +165,8 @@
 
   /* ---------- escala do palco ---------- */
   function escalar() {
-    var k = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    /* a folha ocupa 92% da janela: em volta fica Londres, com as figurinhas nas bordas */
+    var k = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * .92;
     document.documentElement.style.setProperty('--escala', k);
     if (org.aberto) escalarMinis();
   }
@@ -204,7 +205,7 @@
       requestAnimationFrame(quadro);
     }
     function conferir() {
-      var deve = mundo.dataset.lugar === 'rua' && !document.hidden && !reduz.matches && !org.aberto;
+      var deve = !document.hidden && !reduz.matches && !org.aberto;   /* neva em Londres o tempo todo */
       if (deve && !rodando) { rodando = true; ultimo = performance.now(); requestAnimationFrame(quadro); }
       else if (!deve) rodando = false;
     }

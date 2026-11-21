@@ -81,9 +81,27 @@ Avançar e Voltar e o nome do slide atual e do próximo.
   `estampa: { img: 'abaco', onde: 'lado' }` (coluna). Uma gravura nova entra pelo roteiro
   `ferramentas/estampas.py`, que converte o PNG em preto e branco e refaz `js/estampas.js`.
   As estampas são só ilustração: não acrescentam texto ao material.
-- A moldura das páginas de revista tem cantoneiras, e em volta da folha aparece uma mesa de
-  madeira quando a janela não tem a proporção 16:9 (em tela cheia num projetor 16:9 ela não
-  aparece).
+- A moldura das páginas de revista tem cantoneiras.
+- A página inteira é um lugar, a Londres do Sherlock (`css/londres.css`, `js/londres.js`):
+  - Abertura: a apresentação começa na rua, diante da porta da casa 221B, em Baker Street.
+    Clicar na porta, apertar `Enter` ou a seta para a frente bate à porta e entra na capa; `Esc`
+    ou "Pular a abertura" entra direto. O botão Avançar do celular também abre a porta. A
+    abertura só aparece quando a apresentação abre no começo: um endereço que já aponta para
+    outro slide (`#/fatos`, por exemplo) abre nele, e `?entrada=0` desliga a abertura.
+  - Cenário: atrás da folha fica um panorama de Londres à noite, com neve e névoa, que anda da
+    catedral até a ponte da Torre conforme os slides avançam e responde de leve ao ponteiro. A
+    folha ocupa 92% da janela para o cenário aparecer também em tela cheia. Uma carruagem
+    percorre a linha de progresso, embaixo.
+  - Figurinhas: 36 adesivos recortados (Londres, o detetive, o caso, o Natal), em
+    `img/fig-*.webp`. Cada slide leva duas ou três coladas nas bordas da folha, em lugar medido
+    para não cobrir texto (em 6 slides de conteúdo largo cabe só uma, ou as duas ficam do mesmo
+    lado). Clicar balança a figurinha; arrastar cola em outro lugar, só até trocar de slide.
+    Quais figurinhas cada parte usa está em `GRUPOS` e `FIXAS`, no começo de `js/londres.js`.
+  - As imagens (a rua da porta, o panorama e as folhas de figurinhas) foram geradas no
+    Higgsfield para este projeto. `ferramentas/figurinhas.py` recorta as folhas de figurinhas e
+    refaz `js/figurinhas.js`.
+  - Com movimento reduzido no sistema, a abertura some sem a entrada pela porta, o cenário não
+    anda e as figurinhas aparecem paradas.
 - Pastas confidenciais em 3D (roteiro, suspeitos e fichas): começam fechadas, com o carimbo na
   capa, e cada seta para a frente abre uma. A do caso abre sozinha ao entrar no slide.
 - `js/tres-d.js`, `js/modelo-busto.js` e `js/modelo-pizza.js`: as peças em 3D, o busto do
@@ -109,5 +127,10 @@ recarregar; o quiz com a tela do apresentador e dois celulares simulados pelo se
 voltar, slide atual). Em 21/11, depois das estampas: os 61 slides medidos de novo (nenhum texto
 estourando, nenhuma imagem quebrada), a apresentação percorrida do começo ao fim e o modo
 organizar aberto e fechado. O quiz e o controle não foram refeitos depois das estampas (os
-arquivos deles não mudaram). Não conferido: celular de verdade lendo o QR code (depende de publicar),
-Safari e Firefox, projetor, e a sala cheia (o teste foi com dois jogadores).
+arquivos deles não mudaram). Em 21/11, depois da página de Londres: a abertura pela porta com
+clique, com `Enter`, com `Esc` e pelo caminho do botão Avançar do celular; as teclas da
+apresentação presas enquanto a abertura está na tela; as figurinhas dos 61 slides medidas
+(nenhuma sobre texto ou imagem); clicar e arrastar figurinha; o modo organizar aberto e fechado;
+janela 16:9 e janela quase quadrada. Não conferido: celular de verdade lendo o QR code (depende de publicar),
+Safari e Firefox, projetor, a sala cheia (o teste foi com dois jogadores), a abertura pelo
+celular de verdade e o movimento reduzido por emulação do sistema.

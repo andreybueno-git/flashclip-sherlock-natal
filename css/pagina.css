@@ -2,7 +2,7 @@
    e as estampas (gravuras de época que ocupam o espaço livre de cada página, como as vinhetas
    que os tipógrafos punham no fim do texto). */
 
-/* ---------- a mesa: aparece em volta da folha quando a janela não é 16:9 ---------- */
+/* ---------- a mesa de madeira (substituída por Londres: css/londres.css vem depois e cobre isto) ---------- */
 html, body { background: #1b120b; }
 .mundo {
   background:

@@ -77,7 +77,8 @@
       mv.setAttribute('rotation-per-second', m.giro);
       mv.setAttribute('auto-rotate-delay', '0');
       function girar() {
-        if (slide.classList.contains('ativa') && !reduz.matches && !(m.foto && foto)) mv.setAttribute('auto-rotate', '');
+        var naPorta = window.LONDRES && window.LONDRES.naPorta();   /* só gira depois da abertura */
+        if (slide.classList.contains('ativa') && !reduz.matches && !(m.foto && foto) && !naPorta) mv.setAttribute('auto-rotate', '');
         else mv.removeAttribute('auto-rotate');
       }
       mv.addEventListener('load', function () { alvo.parentNode.classList.add('tem-3d'); girar(); });
