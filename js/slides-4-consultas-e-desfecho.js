@@ -14,6 +14,7 @@
   }
 
   folha('consultas', {
+    estampa: 'lanterna',
     kicker: 'Prolog · Consultas', titulo: 'Como fazer consultas?',
     corpo: `
       <div class="lado lado--70">
@@ -26,6 +27,7 @@
   });
 
   folha('preparando', {
+    estampa: 'mesa-posta',
     kicker: 'Consultas · Preparando o teste', titulo: 'Preparando o teste', selo: 'aula',
     corpo: `
       <div class="lado lado--40">
@@ -54,6 +56,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('tipo2', {
+    estampa: { img: 'cloche', onde: 'lado' },
     kicker: 'Consultas · Tipo 2', titulo: 'Perguntas de “quem?” ou “o quê?”', selo: 'aula',
     corpo: `
       <p>Quando você coloca uma palavra com letra maiúscula (como ${pl('X')} ou ${pl('Pessoa')}), pede ao Prolog que descubra o valor que torna a frase verdadeira. Se descobrir, ele guarda o valor na variável e mostra na tela.</p>
@@ -63,6 +66,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('tipo3', {
+    estampa: 'ampulheta',
     kicker: 'Consultas · Tipo 3', titulo: 'Perguntas com várias respostas', selo: 'aula',
     etapas: 3,
     corpo: `
@@ -100,6 +104,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('quem-gosta', {
+    estampa: 'fatia',
     kicker: 'O caso · Passo 3 · Consultas', titulo: 'Quem gosta de pizza?', selo: 'caso',
     corpo: `
       <div class="lado lado--50">
@@ -112,6 +117,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('desafio3', {
+    estampa: 'fogao',
     kicker: 'Desafio 3 · Consultas', titulo: 'Quem estava na cozinha?', selo: 'caso', classe: 'desafio',
     corpo: `
       <p class="lead">Você conhece as pistas. Agora escreva a pergunta em Prolog.</p>
@@ -123,6 +129,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
     return '<span class="chip">' + icone('retrato-' + nome, 'retrato') + pl('Quem = ' + nome) + '</span>';
   }
   folha('desafio3-resposta', {
+    estampa: 'pegadas',
     kicker: 'Desafio 3 · Resposta', titulo: 'Leo e Bia estavam na cozinha', selo: 'caso',
     corpo: `
       <div class="lado lado--50">
@@ -138,6 +145,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
     return '<div class="cartao grupo"><p class="sub">' + sub + '</p><div class="grupo__rostos">' + icone('retrato-' + a, 'retrato') + icone('retrato-' + b, 'retrato') + '</div><h3>' + frase + '</h3></div>';
   }
   folha('impasse', {
+    estampa: 'placa',
     kicker: 'O caso · O impasse', titulo: 'O impasse', selo: 'caso',
     corpo: `
       <div class="grade g2">
@@ -192,6 +200,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('desafio-final', {
+    estampa: 'kit-detetive',
     kicker: 'Desafio final', titulo: 'Agora o detetive é você', selo: 'caso', classe: 'desafio',
     corpo: `
       <div class="lado lado--50 topo">
@@ -208,6 +217,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('resultado-final', {
+    estampa: 'envelopes',
     kicker: 'Desafio final · Resultado', titulo: 'A regra é a mesma, a resposta mudou', selo: 'caso', longo: true,
     corpo: `
       <div class="grade g2 antes-depois">
@@ -218,6 +228,7 @@ feliz(X) :- gosta(X, pizza).`, { rotulo: 'No arquivo', classe: 'codigo--caderno 
   });
 
   folha('fechar', {
+    estampa: 'violino',
     kicker: 'Para fechar', titulo: 'O que aprendemos hoje',
     corpo: `
       <ol class="fecho">

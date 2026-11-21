@@ -70,14 +70,39 @@
      com window.LAYOUT_ATUAL = 'jornal' e daí em diante cada página ganha o cabeçalho do jornal. */
   var JORNAL = '<p class="jornal__topo" aria-hidden="true"><span>Londres · Edição de Natal</span><b>O Correio de Baker Street</b><span>Preço: um pêni</span></p>';
 
+  /* Cantoneiras da moldura (só aparecem na página de revista). */
+  var CANTOS = '<span class="cantos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+
+  /* Estampa: gravura de época que ocupa o espaço livre da página, como as vinhetas que os
+     tipógrafos punham no fim do texto. o.estampa = 'nome' (vinheta embaixo do texto) ou
+     {img: 'nome', onde: 'lado'} (gravura numa coluna à direita). Os arquivos ficam em
+     img/est-<nome>.webp e as medidas em window.ESTAMPAS (js/estampas.js). */
+  function estampa(e) {
+    if (typeof e === 'string') e = { img: e };
+    var m = (window.ESTAMPAS || {})[e.img] || [3, 2];
+    var onde = e.onde || 'pe';
+    var img = '<img src="img/est-' + e.img + '.webp" width="' + m[0] + '" height="' + m[1] + '" alt="" decoding="async" fetchpriority="low">';
+    return {
+      onde: onde,
+      html: '<figure class="estampa estampa--' + onde + '" aria-hidden="true" style="--ar:' + (m[0] / m[1]).toFixed(3) + '">' +
+        (onde === 'pe' ? '<i class="estampa__fio"></i>' + img + '<i class="estampa__fio"></i>' : img) + '</figure>'
+    };
+  }
+
   window.folha = function (id, o) {
     o.id = id; o.tipo = 'folha'; o.layout = window.LAYOUT_ATUAL || '';
+    var corpo = o.corpo, arranjo = o.arranjo || '';
+    if (o.estampa) {
+      var e = estampa(o.estampa);
+      if (e.onde === 'lado') corpo = '<div class="com-estampa"><div class="pilha">' + corpo + '</div>' + e.html + '</div>';
+      else { corpo += e.html; arranjo += ' corpo--vinheta'; }
+    }
     o.html =
-      '<div class="folha ' + (o.classe || '') + '">' +
+      '<div class="folha ' + (o.classe || '') + '">' + CANTOS +
       (o.layout === 'jornal' ? JORNAL : '') +
       '<header class="cab"><p class="kicker">' + o.kicker + '</p>' + (o.selo ? SELOS[o.selo] : '') + '</header>' +
       '<h2 class="titulo' + (o.longo ? ' titulo--longo' : '') + '">' + o.titulo + '</h2>' +
-      '<div class="corpo ' + (o.arranjo || '') + '">' + o.corpo + '</div>' +
+      '<div class="corpo ' + arranjo + '">' + corpo + '</div>' +
       '<footer class="pe"><span class="pe__marca">FlashClip · Edição de Natal</span><span class="pe__enfeite" aria-hidden="true">' + window.ARTE.usar('azevinho') + '</span><span class="pe__num"></span></footer>' +
       '</div>';
     window.SLIDES.push(o);
@@ -85,7 +110,7 @@
 
   window.cena = function (id, o) {
     o.id = id; o.tipo = 'cena'; o.layout = window.LAYOUT_ATUAL || '';
-    o.html = '<div class="cena ' + (o.classe || '') + '">' +
+    o.html = '<div class="cena ' + (o.classe || '') + '">' + CANTOS +
       (o.layout === 'jornal' ? JORNAL + '<p class="jornal__extra" aria-hidden="true">Edição extra</p>'
         : '<p class="cena__topo" aria-hidden="true"><span>FlashClip</span><b>Edição de Natal</b><span>Do algoritmo ao Prolog</span></p>') +
       o.corpo + '</div>';

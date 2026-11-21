@@ -59,6 +59,7 @@
   });
 
   folha('receita', {
+    estampa: 'pudim',
     kicker: 'Parte 1 · Algoritmo', titulo: 'Pense numa receita de bolo',
     etapas: 1,
     corpo: `
@@ -75,6 +76,7 @@
   });
 
   folha('desafio1', {
+    estampa: { img: 'automato', onde: 'lado' },
     kicker: 'Desafio 1', titulo: 'Ensine um robô a escovar os dentes', classe: 'desafio',
     corpo: `
       <p class="lead">Diga os passos em ordem, um por um.</p>
@@ -99,6 +101,7 @@
   });
 
   folha('pratica', {
+    estampa: 'maquina',
     kicker: 'Parte 1 · Linguagem de programação', titulo: 'Como funciona na prática?',
     corpo: `
       <ol class="grade g3">
@@ -183,6 +186,7 @@ if ...</pre>
   });
 
   folha('servem', {
+    estampa: 'livro-caixa',
     kicker: 'Parte 1 · Variável', titulo: 'Para que elas servem?',
     corpo: `
       <p class="lead">Sem variáveis, os programas não conseguiriam lembrar de nada!</p>
@@ -194,6 +198,7 @@ if ...</pre>
   });
 
   folha('tipos', {
+    estampa: 'gaveteiro',
     kicker: 'Parte 1 · Tipos de dados', titulo: 'Tipos de dados',
     corpo: `
       <p class="lead">São as etiquetas de categorias que dizem ao computador que tipo de informação ele está guardando.</p>
@@ -212,6 +217,7 @@ if ...</pre>
   function cartao(sub, txt) { return '<div class="cartao"><p class="sub">' + sub + '</p><p>' + txt + '</p></div>'; }
 
   folha('tipo-texto', {
+    estampa: { img: 'carta', onde: 'lado' },
     kicker: 'Tipos de dados · 1 de 4', titulo: 'Texto (String)',
     corpo: `
       <p class="lead">São palavras, frases ou letras.</p>
@@ -223,6 +229,7 @@ if ...</pre>
   });
 
   folha('tipo-inteiro', {
+    estampa: { img: 'abaco', onde: 'lado' },
     kicker: 'Tipos de dados · 2 de 4', titulo: 'Número inteiro (Integer)',
     corpo: `
       <p class="lead">São números sem vírgula, que podem ser positivos, negativos ou zero.</p>
@@ -233,6 +240,7 @@ if ...</pre>
   });
 
   folha('tipo-decimal', {
+    estampa: { img: 'balanca', onde: 'lado' },
     kicker: 'Tipos de dados · 3 de 4', titulo: 'Número decimal (Float)',
     corpo: `
       <p class="lead">São números que têm parte quebrada (casas decimais).</p>
@@ -265,6 +273,7 @@ if ...</pre>
   });
 
   folha('revisao1', {
+    estampa: 'livros',
     kicker: 'Revisão · Parte 1', titulo: 'O que vimos nos fundamentos',
     corpo: `
       <ol class="revisao">

@@ -70,6 +70,19 @@ Avançar e Voltar e o nome do slide atual e do próximo.
   slide leva o seu.
 - Gravuras geradas no Higgsfield para este projeto: os retratos de Ana, Leo e Bia e a mesa da
   festa em duas versões (com a fatia e com o prato vazio), em `img/`. São pessoas inventadas.
+- Página inteira estilizada (`css/pagina.css`): em 38 slides o espaço livre da página leva uma
+  estampa, isto é, uma gravura de época ligada ao assunto (ábaco no número inteiro, balança no
+  decimal, gaveteiro nos tipos de dados, caixa de tipos em maiúscula e minúscula, e assim por
+  diante). Ela entra como vinheta embaixo do texto, entre dois fios, ou numa coluna à direita.
+  As imagens são `img/est-*.webp` (tinta com transparência, para parecer impressa no papel) e as
+  medidas ficam em `js/estampas.js`. Para pôr ou trocar a estampa de um slide, use a opção
+  `estampa` na chamada `folha(...)` em `js/slides-*.js`: `estampa: 'abaco'` (vinheta) ou
+  `estampa: { img: 'abaco', onde: 'lado' }` (coluna). Uma gravura nova entra pelo roteiro
+  `ferramentas/estampas.py`, que converte o PNG em preto e branco e refaz `js/estampas.js`.
+  As estampas são só ilustração: não acrescentam texto ao material.
+- A moldura das páginas de revista tem cantoneiras, e em volta da folha aparece uma mesa de
+  madeira quando a janela não tem a proporção 16:9 (em tela cheia num projetor 16:9 ela não
+  aparece).
 - Pastas confidenciais em 3D (roteiro, suspeitos e fichas): começam fechadas, com o carimbo na
   capa, e cada seta para a frente abre uma. A do caso abre sozinha ao entrar no slide.
 - `js/tres-d.js`, `js/modelo-busto.js` e `js/modelo-pizza.js`: as peças em 3D, o busto do
@@ -86,5 +99,8 @@ Conferido no navegador (Chromium), em 20 e 21/11/2026: os 61 slides sem estouro 
 organizar com arrasto de verdade, botões, teclado, desfazer, ordem original e ordem guardada após
 recarregar; o quiz com a tela do apresentador e dois celulares simulados pelo serviço público real
 (entrada, respostas, pontuação, pódio, remoção de jogador); o controle pelo celular (avançar,
-voltar, slide atual). Não conferido: celular de verdade lendo o QR code (depende de publicar),
+voltar, slide atual). Em 21/11, depois das estampas: os 61 slides medidos de novo (nenhum texto
+estourando, nenhuma imagem quebrada), a apresentação percorrida do começo ao fim e o modo
+organizar aberto e fechado. O quiz e o controle não foram refeitos depois das estampas (os
+arquivos deles não mudaram). Não conferido: celular de verdade lendo o QR code (depende de publicar),
 Safari e Firefox, projetor, e a sala cheia (o teste foi com dois jogadores).

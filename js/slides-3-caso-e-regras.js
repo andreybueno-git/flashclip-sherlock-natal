@@ -70,6 +70,7 @@ estava(bia, cozinha).`;
   });
 
   folha('tres-passos', {
+    estampa: 'chapeu',
     kicker: 'O caso · Os três passos', titulo: 'Os três passos do detetive', selo: 'caso',
     corpo: `
       <ol class="grade g3 pilares">
@@ -93,6 +94,7 @@ estava(bia, cozinha).`;
   });
 
   folha('ache-erro', {
+    estampa: { img: 'borrao', onde: 'lado' },
     kicker: 'Desafio 2 · Fatos', titulo: 'Ache o erro', selo: 'caso', classe: 'desafio',
     corpo: `
       <p class="lead">Um assistente distraído anotou as pistas do caso.<br><b>Cada linha tem um erro. Qual?</b></p>
@@ -103,6 +105,7 @@ estava(bia, cozinha).`;
     return '<li data-passo="' + n + '"><span class="num">' + n + '</span><code class="pl erro__cod">' + cod + '</code><p>' + txt + '</p></li>';
   }
   folha('ache-erro-resposta', {
+    estampa: 'tinteiro',
     kicker: 'Desafio 2 · Resposta', titulo: 'O erro de cada linha', selo: 'caso',
     corpo: `
       <ol class="erros">
@@ -114,6 +117,7 @@ estava(bia, cozinha).`;
   });
 
   folha('regras', {
+    estampa: 'bombons',
     kicker: 'Prolog · Regras', titulo: 'Construindo regras',
     corpo: `
       <p class="lead">Fazer regras é ensinar o computador a “ligar os pontos” e tirar conclusões sozinho, a partir dos fatos que você já contou.</p>
@@ -123,6 +127,7 @@ estava(bia, cozinha).`;
   });
 
   folha('regra-estrutura', {
+    estampa: 'engrenagens',
     kicker: 'Regras · Estrutura', titulo: 'A estrutura básica de uma regra',
     corpo: `
       ${bloco('conclusao(X) :- condicao(X).', { classe: 'codigo--grande' })}
@@ -131,6 +136,7 @@ estava(bia, cozinha).`;
   });
 
   folha('regra-simples', {
+    estampa: 'bola',
     kicker: 'Regras · Exemplo 1: regra simples', titulo: 'Uma condição', selo: 'aula',
     corpo: `
       <p>Primeiro, imagine que temos estes fatos:</p>
@@ -161,6 +167,7 @@ estava(bia, cozinha).`;
   });
 
   folha('composta', {
+    estampa: 'cadeado',
     kicker: 'Regras · Exemplo 2: regra composta', titulo: 'Duas ou mais condições',
     corpo: `
       <p class="lead">Na vida real, muitas vezes precisamos que duas coisas sejam verdadeiras ao mesmo tempo. Para regras mais complexas, o Prolog usa alguns símbolos:</p>
@@ -173,6 +180,7 @@ estava(bia, cozinha).`;
   });
 
   folha('irmao', {
+    estampa: 'camafeus',
     kicker: 'Regras · Exemplo 2: regra composta', titulo: 'Exemplo: ser irmão', selo: 'aula',
     corpo: `
       <p>Imagine estes fatos sobre uma família:</p>
@@ -182,6 +190,7 @@ estava(bia, cozinha).`;
   });
 
   folha('regra-culpado', {
+    estampa: 'algemas',
     kicker: 'O caso · Passo 2 · Regras', titulo: 'A regra do culpado', selo: 'caso',
     corpo: `
       <p class="lead">É culpado <b>SE</b> gosta de pizza <b>E</b> estava na cozinha.</p>
@@ -196,6 +205,7 @@ estava(bia, cozinha).`;
 
   var P = '<span class="pino t-var">P</span>';
   folha('mesma-letra', {
+    estampa: 'fio',
     kicker: 'O caso · Passo 2 · Regras', titulo: 'A mesma letra, a mesma pessoa', selo: 'caso',
     etapas: 1,
     corpo: `

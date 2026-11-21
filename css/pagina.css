@@ -1,0 +1,49 @@
+/* A página inteira estilizada: a mesa de madeira em volta da folha, as cantoneiras da moldura
+   e as estampas (gravuras de época que ocupam o espaço livre de cada página, como as vinhetas
+   que os tipógrafos punham no fim do texto). */
+
+/* ---------- a mesa: aparece em volta da folha quando a janela não é 16:9 ---------- */
+html, body { background: #1b120b; }
+.mundo {
+  background:
+    radial-gradient(130% 120% at 50% 46%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, .62) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cfilter id='v' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0035 .16' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .07 0 0 0 0 .04 0 0 0 0 .02 0 0 0 1.5 -.42'/%3E%3C/filter%3E%3Crect width='900' height='600' filter='url(%23v)'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, #4b321c, #5a3d22 28%, #46301a 55%, #573a20 80%, #44301b);
+}
+.palco { background: var(--papel); box-shadow: 0 0 0 1px rgba(0, 0, 0, .55), 0 3px 0 1px rgba(205, 185, 140, .5), 0 34px 80px rgba(0, 0, 0, .62); }
+.progresso { background: rgba(0, 0, 0, .4); }
+
+/* ---------- cantoneiras: leque de gravador nos quatro cantos da moldura ---------- */
+.cantos i { position: absolute; width: 50px; height: 50px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cg fill='none' stroke='%231c1712'%3E%3Cpath d='M0 17A17 17 0 0 0 17 0H0z' fill='%231c1712' stroke='none'/%3E%3Ccircle cx='6.5' cy='6.5' r='2.6' fill='%23efe3c6' stroke='none'/%3E%3Cpath d='M0 25A25 25 0 0 0 25 0' stroke-width='2.4'/%3E%3Cpath d='M0 32A32 32 0 0 0 32 0' stroke-width='1'/%3E%3Cpath d='M22.6 22.6l6.4 6.4M9.6 30.5l2.6 7.6M30.5 9.6l7.6 2.6' stroke-width='1.6' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='%231c1712'%3E%3Ccircle cx='31.5' cy='31.5' r='2.4'/%3E%3Ccircle cx='13.2' cy='40.8' r='1.9'/%3E%3Ccircle cx='40.8' cy='13.2' r='1.9'/%3E%3Ccircle cx='45' cy='2.4' r='2.4'/%3E%3Ccircle cx='2.4' cy='45' r='2.4'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0 / contain; }
+.cantos i:nth-child(1) { left: 12px; top: 12px; }
+.cantos i:nth-child(2) { right: 12px; top: 12px; transform: scaleX(-1); }
+.cantos i:nth-child(3) { left: 12px; bottom: 12px; transform: scaleY(-1); }
+.cantos i:nth-child(4) { right: 12px; bottom: 12px; transform: scale(-1); }
+.slide--jornal .cantos { display: none; }
+
+/* ---------- estampas ---------- */
+.estampa { margin: 0; }
+.entrando .estampa { animation: imprime .7s var(--sai) .4s both; }
+
+/* vinheta embaixo do texto: ocupa a altura que sobrar, entre dois fios */
+.corpo--vinheta { gap: 22px; }
+.estampa--pe { flex: 1 1 0; min-height: 0; max-height: 430px; display: flex; align-items: center; justify-content: center; gap: 40px; }
+.estampa--pe img { flex: none; height: 100%; width: auto; max-width: 64%; object-fit: contain; }
+.estampa__fio { position: relative; flex: 1 1 0; height: 10px; border-top: 4px solid var(--tinta); border-bottom: 1px solid var(--tinta); }
+.estampa__fio::after { content: ""; position: absolute; top: -7px; width: 14px; height: 14px; background: var(--tinta); transform: rotate(45deg); }
+.estampa__fio:first-child::after { right: -8px; }
+.estampa__fio:last-child::after { left: -8px; }
+
+/* gravura numa coluna à direita do texto */
+.com-estampa { flex: 1 1 0; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 520px; gap: 64px; align-items: center; }
+.com-estampa > .pilha { gap: 26px; }
+.estampa--lado { position: relative; align-self: stretch; }
+.estampa--lado img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+/* no jornal: fio de coluna entre o texto e a gravura, e fios simples na vinheta */
+.slide--jornal .com-estampa { gap: 0; grid-template-columns: minmax(0, 1fr) 560px; }
+.slide--jornal .com-estampa > .pilha { padding-right: 44px; }
+.slide--jornal .estampa--lado { border-left: 1px solid var(--tinta); }
+.slide--jornal .estampa--lado img { inset: 0 0 0 44px; width: calc(100% - 44px); }
+.slide--jornal .estampa__fio { height: 7px; border-top-width: 2px; }
+.slide--jornal .estampa__fio::after { top: -5px; width: 10px; height: 10px; }

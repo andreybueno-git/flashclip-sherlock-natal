@@ -20,6 +20,7 @@
   });
 
   folha('diferenca', {
+    estampa: 'chave',
     kicker: 'Prolog · A grande diferença', titulo: 'Dois jeitos de falar com o computador',
     corpo: `
       <div class="grade g2 versus">
@@ -40,6 +41,7 @@
   });
 
   folha('usado', {
+    estampa: 'dirigivel',
     kicker: 'Prolog · Onde é usado', titulo: 'Quem usa ou já usou Prolog',
     corpo: `
       <p class="lead">Alguns exemplos bem famosos de empresas e organizações.</p>
@@ -53,6 +55,7 @@
   });
 
   folha('pilares', {
+    estampa: 'colunas',
     kicker: 'Prolog · Como funciona', titulo: 'Três pilares principais',
     corpo: `
       <ol class="grade g3 pilares">
@@ -76,6 +79,7 @@
   });
 
   folha('fatos', {
+    estampa: 'caderno',
     kicker: 'Prolog · Fatos', titulo: 'Construindo fatos',
     corpo: `
       <p class="lead">Um fato é uma <b>verdade absoluta</b> que você conta para o computador, como escrever anotações num caderno.</p>
@@ -84,6 +88,7 @@
   });
 
   folha('estrutura', {
+    estampa: 'relogio',
     kicker: 'Prolog · Fatos', titulo: 'Destrinchando a estrutura',
     corpo: `
       <figure class="codigo codigo--grande anatomia"><pre><span class="ln"><span class="parte-f pf1">predicado</span>(<span class="parte-f pf2">argumento1, argumento2</span>)<span class="parte-f pf3">.</span></span></pre></figure>
@@ -98,6 +103,7 @@
     return '<li><span class="ff__frase">' + frase + '</span><span class="ff__seta" aria-hidden="true"></span><span class="ff__fato" data-passo="' + n + '">' + pl(fato) + '</span></li>';
   }
   folha('frase-fato', {
+    estampa: 'gato',
     kicker: 'Fatos · Exemplos práticos', titulo: 'Da frase ao fato', selo: 'aula',
     corpo: `
       <ul class="ff">
@@ -109,6 +115,7 @@
   });
 
   folha('maiuscula', {
+    estampa: 'tipos-moveis',
     kicker: 'Fatos · Maiúsculas e minúsculas', titulo: 'Maiúscula ou minúscula?', selo: 'aula',
     corpo: `
       <p class="lead">No Prolog, o uso de maiúsculas e minúsculas faz toda a diferença.</p>
@@ -127,6 +134,7 @@
   });
 
   folha('dois-tipos', {
+    estampa: 'carimbos',
     kicker: 'Antes de começar', titulo: 'Dois tipos de slide',
     corpo: `
       <div class="grade g2 tipos-selo">
