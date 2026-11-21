@@ -1,0 +1,87 @@
+/* Fontes da apresentação — todas locais (../fontes/), licença SIL OFL 1.1.
+   Procedência e licenças: fontes/PROCEDENCIA.txt e fontes/OFL-*.txt
+
+   Título      Besley              variável, peso 400–900, romano e itálico
+   Texto       Libre Baskerville   variável, peso 400–700, romano e itálico
+   Código      IBM Plex Mono       500 e 700, itálico 500 (sem ligaduras no arquivo)
+   Manuscrita  Charm               400 e 700 */
+
+/* ---------- Título: Besley ---------- */
+@font-face {
+  font-family: "Besley";
+  src: url("../fontes/besley-vf.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Besley";
+  src: url("../fontes/besley-italico-vf.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Texto: Libre Baskerville ---------- */
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("../fontes/libre-baskerville-vf.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("../fontes/libre-baskerville-italico-vf.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Código: IBM Plex Mono ----------
+   O peso de base é o 500 (traço mais firme no projetor). Quem pedir
+   font-weight 400 recebe o 500: é a regra de escolha de peso do navegador. */
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fontes/ibm-plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fontes/ibm-plex-mono-500-italico.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fontes/ibm-plex-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Manuscrita: Charm ---------- */
+@font-face {
+  font-family: "Charm";
+  src: url("../fontes/charm-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Charm";
+  src: url("../fontes/charm-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --f-titulo: "Besley", "Superclarendon", "Clarendon", "Rockwell", Georgia, "Times New Roman", serif;
+  --f-texto: "Libre Baskerville", "Baskerville", "Baskerville Old Face", Georgia, "Times New Roman", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+  --f-manuscrita: "Charm", "Bradley Hand", "Noteworthy", "Segoe Print", cursive;
+}

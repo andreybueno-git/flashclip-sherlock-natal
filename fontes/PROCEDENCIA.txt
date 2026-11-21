@@ -1,0 +1,33 @@
+PROCEDÊNCIA DAS FONTES — baixadas em 20/11/2026
+Todas sob SIL Open Font License 1.1 (uso e redistribuição livres; a licença
+de cada uma está nesta pasta, em OFL-*.txt, e precisa acompanhar os arquivos).
+
+BESLEY 2.001 — Owen Earl (indestructible type*) — sem nome reservado
+  Origem: github.com/google/fonts, pasta ofl/besley (commit 06bfe0d62a)
+  besley-vf.woff2           recorte de Besley[wght].ttf          (sha256 do original 71f352d8859c…)
+  besley-italico-vf.woff2   recorte de Besley-Italic[wght].ttf   (sha256 do original de502a1ab6b0…)
+  Modificação: recorte de glifos (latim básico + Latin-1 + pontuação tipográfica)
+  e conversão para woff2. Eixo de peso 400–900 mantido inteiro.
+
+LIBRE BASKERVILLE 2.005 — Pablo Impallari, Rodrigo Fuenzalida — nome reservado "Libre Baskerville"
+  Origem: github.com/google/fonts, pasta ofl/librebaskerville (commit 06bfe0d62a)
+  libre-baskerville-vf.woff2           de LibreBaskerville[wght].ttf          (sha256 05a954219613…)
+  libre-baskerville-italico-vf.woff2   de LibreBaskerville-Italic[wght].ttf   (sha256 223959683dc7…)
+  Modificação: nenhuma no desenho nem no conjunto de glifos; só a embalagem
+  woff2 (compressão). Não foi recortada por causa do nome reservado.
+
+IBM PLEX MONO 2.005 — IBM Corp. (Mike Abbink, Bold Monday) — nome reservado "Plex"
+  Origem: pacote oficial da IBM no npm, @ibm/plex-mono 2.5.0, pasta fonts/complete/woff2
+  ibm-plex-mono-500.woff2           = IBMPlexMono-Medium.woff2         (cópia idêntica)
+  ibm-plex-mono-500-italico.woff2   = IBMPlexMono-MediumItalic.woff2   (cópia idêntica)
+  ibm-plex-mono-700.woff2           = IBMPlexMono-Bold.woff2           (cópia idêntica)
+  Modificação: nenhuma; só o nome do arquivo mudou.
+
+CHARM 1.001 — Cadson Demak — sem nome reservado
+  Origem: github.com/google/fonts, pasta ofl/charm (commit 06bfe0d62a)
+  charm-400.woff2   recorte de Charm-Regular.ttf   (sha256 do original daae102e4112…)
+  charm-700.woff2   recorte de Charm-Bold.ttf      (sha256 do original 6e1fa92fda7a…)
+  Modificação: recorte de glifos (sai o tailandês; fica latim básico + Latin-1
+  + pontuação tipográfica + setas) e conversão para woff2.
+
+Peso total dos nove arquivos woff2: 413.388 bytes (404 KB).

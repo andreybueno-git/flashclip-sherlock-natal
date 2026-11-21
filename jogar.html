@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b131c">
+<title>Quiz do caso · entrar</title>
+<link rel="stylesheet" href="css/fontes.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="q q--celular">
+
+<header class="c-topo">
+  <p class="q-marca">Quiz do caso</p>
+  <p id="conexao" class="q-conexao" role="status">Conectando…</p>
+</header>
+
+<main class="c-palco" aria-live="polite">
+
+  <section id="t-codigo" class="c-tela" hidden>
+    <h1>Qual é a sala?</h1>
+    <p>Digite o código de 6 letras que aparece no telão.</p>
+    <form id="form-codigo">
+      <input id="campo-codigo" autocomplete="off" autocapitalize="characters" maxlength="6" inputmode="text" aria-label="Código da sala" placeholder="ABC123">
+      <button type="submit" class="q-botao q-botao--forte">Entrar na sala</button>
+    </form>
+  </section>
+
+  <section id="t-entrar" class="c-tela" hidden>
+    <h1>Detetive, qual é o seu apelido?</h1>
+    <form id="form-apelido">
+      <input id="campo-apelido" autocomplete="off" maxlength="16" enterkeyhint="go" aria-label="Seu apelido" placeholder="Seu apelido">
+      <button type="submit" class="q-botao q-botao--forte">Entrar</button>
+    </form>
+    <p class="c-miudo">Só o apelido vai para o telão. Não precisa de conta nem de cadastro.</p>
+  </section>
+
+  <section id="t-espera" class="c-tela" hidden>
+    <p class="c-selo">Você entrou</p>
+    <h1 id="meu-nome"></h1>
+    <p id="espera-txt">Olhe para o telão. O caso já vai começar.</p>
+  </section>
+
+  <section id="t-pergunta" class="c-tela c-tela--jogo" hidden>
+    <p id="c-qual" class="q-kicker"></p>
+    <div class="c-barra" aria-hidden="true"><i id="c-tempo"></i></div>
+    <h1 id="c-pergunta"></h1>
+    <ol id="c-opcoes" class="c-opcoes"></ol>
+    <p id="c-enviada" class="c-enviada" hidden>Resposta enviada. Agora é esperar o telão.</p>
+  </section>
+
+  <section id="t-resultado" class="c-tela" hidden>
+    <p id="r-selo" class="c-selo"></p>
+    <h1 id="r-titulo"></h1>
+    <p id="r-certa" class="c-certa"></p>
+    <p class="c-pontos"><b id="r-pontos">0</b> pontos <span id="r-ganho"></span></p>
+    <p id="r-pos" class="c-pos"></p>
+  </section>
+
+  <section id="t-fim" class="c-tela" hidden>
+    <p class="c-selo">Caso encerrado</p>
+    <h1 id="f-pos"></h1>
+    <p class="c-pontos"><b id="f-pontos">0</b> pontos</p>
+    <p>Obrigado por investigar com a gente.</p>
+  </section>
+
+  <section id="t-fora" class="c-tela" hidden>
+    <h1>Você saiu da sala</h1>
+    <p>O apresentador tirou este apelido do quiz.</p>
+  </section>
+</main>
+
+<script src="vendor/mqtt.min.js"></script>
+<script src="js/quiz-config.js"></script>
+<script src="js/quiz-transporte.js"></script>
+<script src="js/quiz-jogador.js"></script>
+</body>
+</html>

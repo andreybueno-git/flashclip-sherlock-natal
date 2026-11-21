@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1c1712">
+<title>Controle dos slides · FlashClip</title>
+<link rel="stylesheet" href="css/fontes.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="q q--celular q--controle">
+
+<header class="c-topo">
+  <p class="q-marca">Controle dos slides</p>
+  <p id="conexao" class="q-conexao" role="status">Conectando…</p>
+</header>
+
+<main class="c-palco">
+  <section id="t-codigo" class="c-tela" hidden>
+    <h1>Qual é o código?</h1>
+    <p>Digite as 6 letras que aparecem no quadro “Celular” da apresentação.</p>
+    <form id="form-codigo">
+      <input id="campo-codigo" autocomplete="off" autocapitalize="characters" maxlength="6" aria-label="Código do controle" placeholder="ABC123">
+      <button type="submit" class="q-botao q-botao--forte">Ligar</button>
+    </form>
+  </section>
+
+  <section id="t-controle" class="c-tela ctl" hidden>
+    <div class="ctl__info" aria-live="polite">
+      <p id="ctl-pos" class="q-kicker">Procurando a apresentação…</p>
+      <h1 id="ctl-titulo"></h1>
+      <p id="ctl-etapa" class="ctl__etapa"></p>
+      <p id="ctl-prox" class="ctl__prox"></p>
+    </div>
+    <button type="button" id="ctl-avancar" class="ctl__botao ctl__botao--avancar" disabled>Avançar <span aria-hidden="true">&#9654;</span></button>
+    <button type="button" id="ctl-voltar" class="ctl__botao ctl__botao--voltar" disabled><span aria-hidden="true">&#9664;</span> Voltar</button>
+  </section>
+</main>
+
+<script src="vendor/mqtt.min.js"></script>
+<script src="js/quiz-config.js"></script>
+<script src="js/quiz-transporte.js"></script>
+<script src="js/controle-celular.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz do caso · FlashClip</title>
+<link rel="stylesheet" href="css/fontes.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="q q--tela">
+
+<header class="q-topo">
+  <a id="voltar" class="q-link" href="index.html">&larr; Voltar à apresentação</a>
+  <p class="q-marca">Quiz do caso <span>FlashClip · Do algoritmo ao Prolog</span></p>
+  <p id="conexao" class="q-conexao" role="status">Conectando…</p>
+</header>
+
+<main class="q-palco">
+
+  <!-- sala de espera -->
+  <section id="f-sala" class="q-fase" hidden>
+    <div class="sala">
+      <div class="sala__entrada">
+        <p class="q-kicker">Aponte a câmera do celular</p>
+        <div id="qr" class="sala__qr" aria-label="QR code para entrar no quiz"></div>
+        <p id="url" class="sala__url"></p>
+        <p class="sala__codigo">Sala <b id="codigo"></b></p>
+        <div id="aviso-local" class="sala__aviso" hidden>
+          <p><b>Os celulares ainda não alcançam esta página.</b> Ela está aberta só neste computador. Publique a pasta e cole aqui o endereço público de <code>jogar.html</code>:</p>
+          <form id="form-url"><input id="campo-url" type="url" inputmode="url" placeholder="https://…/jogar.html" aria-label="Endereço público da página dos jogadores"><button type="submit">Usar</button></form>
+        </div>
+      </div>
+      <div class="sala__lista">
+        <h1>Quem entrou <span id="conta">0</span></h1>
+        <ul id="jogadores" class="sala__nomes" aria-live="polite"></ul>
+        <p id="vazio" class="sala__vazio">Ninguém ainda. Escaneie o QR code, escolha um apelido e espere o início.</p>
+        <p class="sala__dica">Toque num nome para tirar da sala.</p>
+        <div class="sala__ajustes">
+          <label>Perguntas <select id="quantas"></select></label>
+          <label>Tempo <select id="tempo"><option value="10">10 s</option><option value="15">15 s</option><option value="20">20 s</option><option value="30">30 s</option></select></label>
+          <button type="button" id="comecar" class="q-botao q-botao--forte">Começar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- pergunta e resposta -->
+  <section id="f-jogo" class="q-fase" hidden>
+    <div class="jogo">
+      <div class="jogo__cab">
+        <p id="qual" class="q-kicker"></p>
+        <div class="jogo__relogio" aria-live="off"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle id="anel" cx="50" cy="50" r="44"/></svg><b id="segundos">20</b></div>
+        <p id="responderam" class="jogo__resp"></p>
+      </div>
+      <h1 id="pergunta" class="jogo__pergunta"></h1>
+      <ol id="opcoes" class="jogo__opcoes"></ol>
+      <div class="jogo__pe">
+        <div id="placar-mini" class="placar-mini" hidden><h2>Placar</h2><ol id="top"></ol></div>
+        <button type="button" id="acao" class="q-botao q-botao--forte">Encerrar o tempo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- fim -->
+  <section id="f-fim" class="q-fase" hidden>
+    <div class="fim-q">
+      <p class="q-kicker">Caso encerrado</p>
+      <h1>Os melhores detetives</h1>
+      <ol id="podio" class="podio"></ol>
+      <ol id="resto" class="resto"></ol>
+      <div class="fim-q__botoes">
+        <button type="button" id="de-novo" class="q-botao">Jogar de novo</button>
+        <button type="button" id="nova-sala" class="q-botao">Nova sala</button>
+        <a id="voltar2" class="q-botao q-botao--forte" href="index.html">Voltar à apresentação</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="vendor/qrcode.js"></script>
+<script src="vendor/mqtt.min.js"></script>
+<script src="js/quiz-config.js"></script>
+<script src="js/quiz-perguntas.js"></script>
+<script src="js/quiz-transporte.js"></script>
+<script src="js/quiz-apresentador.js"></script>
+</body>
+</html>

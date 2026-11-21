@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlashClip: do algoritmo ao Prolog</title>
+<meta name="description" content="Minicurso FlashClip: fundamentos de programação e Prolog, com o caso A noite do crime.">
+<link rel="stylesheet" href="css/fontes.css">
+<link rel="stylesheet" href="css/tema.css">
+<link rel="stylesheet" href="css/slides.css">
+<link rel="stylesheet" href="css/organizar.css">
+</head>
+<body>
+
+<div id="mundo" class="mundo" data-lugar="rua" aria-hidden="true"></div>
+
+<main id="palco" class="palco" aria-label="Apresentação"></main>
+
+<nav id="barra" class="barra" aria-label="Controles da apresentação">
+  <div class="barra__grupo">
+    <button type="button" id="b-organizar" title="Organizar a ordem dos slides (O)">Organizar</button>
+    <button type="button" id="b-controle" title="Passar os slides pelo celular (C)">Celular</button>
+    <a id="b-quiz" href="quiz.html" title="Abrir o quiz (opcional)">Quiz</a>
+    <button type="button" id="b-cheia" title="Tela cheia (F)">Tela cheia</button>
+    <button type="button" id="b-ajuda" title="Atalhos (?)">Atalhos</button>
+  </div>
+  <div class="barra__grupo">
+    <button type="button" id="b-voltar" aria-label="Voltar">&#9664;</button>
+    <span id="contador" class="barra__conta" aria-live="polite">1 / 1</span>
+    <button type="button" id="b-avancar" aria-label="Avançar">&#9654;</button>
+  </div>
+</nav>
+<div id="progresso" class="progresso" aria-hidden="true"><i></i></div>
+
+<section id="organizar" class="org" hidden aria-label="Organizar a ordem dos slides">
+  <header class="org__topo">
+    <div>
+      <h2>Quadro do caso: organize os slides</h2>
+      <p class="org__dica">Arraste uma miniatura, ou use as setas para escolher, <kbd>Espaço</kbd> para pegar e soltar e <kbd>Enter</kbd> para abrir. <kbd>Alt</kbd> + setas move direto. <kbd>Esc</kbd> fecha.</p>
+    </div>
+    <div class="org__botoes">
+      <span id="org-estado" class="org__estado"></span>
+      <button type="button" id="org-desfazer">Desfazer</button>
+      <button type="button" id="org-original">Voltar à ordem original</button>
+      <button type="button" id="org-fechar" class="org__fechar">Fechar</button>
+    </div>
+  </header>
+  <div id="org-rolo" class="org__rolo">
+    <ol id="org-lista" class="org__lista"></ol>
+  </div>
+  <p id="org-vivo" class="so-leitor" aria-live="assertive"></p>
+</section>
+
+<div id="ajuda" class="ajuda" hidden role="dialog" aria-modal="true" aria-labelledby="ajuda-t">
+  <div class="ajuda__caixa">
+    <h2 id="ajuda-t">Atalhos</h2>
+    <dl>
+      <dt><kbd>&rarr;</kbd> <kbd>Espaço</kbd> <kbd>Page Down</kbd></dt><dd>Avançar (primeiro as etapas do slide, depois o próximo slide)</dd>
+      <dt><kbd>&larr;</kbd> <kbd>Page Up</kbd></dt><dd>Voltar</dd>
+      <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>Primeiro e último slide</dd>
+      <dt><kbd>O</kbd></dt><dd>Organizar a ordem dos slides</dd>
+      <dt><kbd>C</kbd></dt><dd>Passar os slides pelo celular (mostra um QR code)</dd>
+      <dt><kbd>F</kbd></dt><dd>Tela cheia</dd>
+      <dt><kbd>?</kbd></dt><dd>Abrir e fechar esta ajuda</dd>
+    </dl>
+    <p>A ordem que você escolher fica guardada neste navegador. O quiz é opcional: só abre pelo botão Quiz.</p>
+    <button type="button" id="ajuda-fechar">Fechar</button>
+  </div>
+</div>
+
+<div id="controle" class="ajuda" hidden role="dialog" aria-modal="true" aria-labelledby="controle-t">
+  <div class="ajuda__caixa controle">
+    <h2 id="controle-t">Passar os slides pelo celular</h2>
+    <p>Aponte a câmera do celular para o código. A página que abrir tem os botões de avançar e voltar. Pode fechar este quadro: o celular continua ligado.</p>
+    <div id="controle-qr" class="controle__qr" aria-label="QR code do controle"></div>
+    <p id="controle-url" class="controle__url"></p>
+    <p id="controle-estado" class="controle__estado" role="status">Ligando…</p>
+    <div id="controle-aviso" class="controle__aviso" hidden>
+      <p><b>O celular ainda não alcança esta página:</b> ela está aberta só neste computador. Publique a pasta e cole aqui o endereço público dela:</p>
+      <form id="controle-form"><input id="controle-campo" type="url" inputmode="url" placeholder="https://…" aria-label="Endereço público da pasta da apresentação"><button type="submit">Usar</button></form>
+    </div>
+    <div class="controle__botoes">
+      <button type="button" id="controle-desligar" class="secundario">Desligar o controle</button>
+      <button type="button" id="controle-fechar">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/qrcode.js"></script>
+<script src="js/arte.js"></script>
+<script src="js/base.js"></script>
+<script src="js/slides-1-fundamentos.js"></script>
+<script src="js/slides-2-prolog.js"></script>
+<script src="js/slides-3-caso-e-regras.js"></script>
+<script src="js/slides-4-consultas-e-desfecho.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/controle-apresentador.js"></script>
+</body>
+</html>
