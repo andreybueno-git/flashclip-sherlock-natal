@@ -194,7 +194,7 @@
     s += casas(r, W, Hh, alt * .34, alt * .8, '#0f0c09', true, true);
     if (op.detetive) {
       var d = op.detetive, dw = 600 * d[2], dh = 700 * d[2];
-      s += '<svg x="' + n0(d[0]) + '" y="' + n0(d[1]) + '" width="' + n0(dw) + '" height="' + n0(dh) + '" viewBox="0 0 600 700"><use href="#detetive"/></svg>';
+      s += '<svg class="gravura__figura" x="' + n0(d[0]) + '" y="' + n0(d[1]) + '" width="' + n0(dw) + '" height="' + n0(dh) + '" viewBox="0 0 600 700"><use href="#detetive"/></svg>';
     }
     /* neve: duas camadas que caem em laço */
     function flocos(nf, raio) {

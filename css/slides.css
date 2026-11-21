@@ -286,6 +286,11 @@ body[data-slide="noite"][data-etapa="1"] .mundo { filter: brightness(.12); }
 .capa .sub { max-width: 880px; }
 .capa__gravura { position: absolute; right: 100px; top: 136px; width: 600px; height: 760px; }
 .capa__gravura .gravura { width: 100%; height: 100%; }
+.tres-d { position: absolute; inset: 6px; }
+.tres-d model-viewer { width: 100%; height: 100%; background: transparent; --poster-color: transparent; filter: sepia(.45) contrast(1.08) brightness(1.08); opacity: 0; transition: opacity .8s var(--sai); }
+.tem-3d .tres-d model-viewer { opacity: 1; }
+.gravura__figura { transition: opacity .6s var(--sai); }
+.tem-3d .gravura__figura { opacity: 0; }
 .capa__lupa { position: absolute; left: -96px; bottom: -64px; width: 220px !important; height: 220px !important; transform: rotate(-14deg); }
 .entrando .capa__lupa { animation: lupa-chega 1s var(--mola) .8s both; }
 @keyframes lupa-chega { from { opacity: 0; transform: translate(-70px, 30px) rotate(-44deg); } to { opacity: 1; transform: rotate(-14deg); } }

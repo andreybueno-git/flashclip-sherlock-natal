@@ -64,7 +64,11 @@ Avançar e Voltar e o nome do slide atual e do próximo.
 - `quiz.html`, `jogar.html`, `controle.html`, `js/quiz-*.js`, `js/controle-*.js`, `css/quiz.css`.
 - `fontes/`: Besley, Libre Baskerville, IBM Plex Mono e Charm (SIL OFL 1.1; licenças e
   procedência na própria pasta).
-- `vendor/`: `mqtt.min.js` (MQTT.js 5.16.1, MIT) e `qrcode.js` (qrcode-generator 1.5.2, MIT).
+- `js/tres-d.js` e `js/modelo-busto.js`: o busto do detetive em 3D que gira na capa (modelo GLB
+  gerado no Higgsfield a partir de imagem própria, embutido em base64 para abrir também direto
+  do arquivo). Se o 3D não carregar, fica a silhueta desenhada.
+- `vendor/`: `mqtt.min.js` (MQTT.js 5.16.1, MIT), `qrcode.js` (qrcode-generator 1.5.2, MIT) e
+  `model-viewer-umd.min.js` (@google/model-viewer 4.4.0, Apache-2.0).
 - `img/ambiente-prolog.webp`: a captura do ambiente, tirada do material.
 
 ## O que foi conferido e o que não foi
