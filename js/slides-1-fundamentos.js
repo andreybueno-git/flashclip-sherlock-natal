@@ -18,6 +18,7 @@
         <div class="capa__gravura" data-e>
           ${ARTE.gravura({ w: 640, h: 780, lua: [330, 300, 205], detetive: [40, 129, .93], torre: .03 })}
           <div class="tres-d" data-3d="busto"></div>
+          <img class="capa__foto" src="img/detetive-coruja.jpg" width="896" height="1120" alt="Retrato de estúdio do detetive com uma coruja no ombro" decoding="async">
           ${icone('lupa', 'capa__lupa')}
         </div>
       </div>`

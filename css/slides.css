@@ -291,6 +291,11 @@ body[data-slide="noite"][data-etapa="1"] .mundo { filter: brightness(.12); }
 .tem-3d .tres-d model-viewer { opacity: 1; }
 .gravura__figura { transition: opacity .6s var(--sai); }
 .tem-3d .gravura__figura { opacity: 0; }
+/* Modo foto (tecla M): no lugar do busto em 3D entra o retrato de estúdio do detetive com a coruja.
+   O retrato também aparece se o 3D não carregar. */
+.capa__foto { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: cover; object-position: 50% 30%; opacity: 0; transition: opacity .6s var(--sai); }
+.modo-foto .capa__foto, .sem-3d .capa__foto { opacity: 1; }
+.modo-foto .tres-d model-viewer { opacity: 0; pointer-events: none; }
 .capa__lupa { position: absolute; left: -96px; bottom: -64px; width: 220px !important; height: 220px !important; transform: rotate(-14deg); }
 .entrando .capa__lupa { animation: lupa-chega 1s var(--mola) .8s both; }
 @keyframes lupa-chega { from { opacity: 0; transform: translate(-70px, 30px) rotate(-44deg); } to { opacity: 1; transform: rotate(-14deg); } }

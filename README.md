@@ -24,6 +24,7 @@ e abra `http://localhost:4187`.
 | `Home` `End` | Primeiro e último slide |
 | `O` | Organizar a ordem dos slides |
 | `C` | Passar os slides pelo celular (mostra um QR code) |
+| `M` | Modo foto: na capa, troca o busto em 3D pelo retrato do detetive com a coruja |
 | `F` | Tela cheia |
 | `?` | Ajuda |
 
@@ -86,9 +87,15 @@ Avançar e Voltar e o nome do slide atual e do próximo.
 - Pastas confidenciais em 3D (roteiro, suspeitos e fichas): começam fechadas, com o carimbo na
   capa, e cada seta para a frente abre uma. A do caso abre sozinha ao entrar no slide.
 - `js/tres-d.js`, `js/modelo-busto.js` e `js/modelo-pizza.js`: as peças em 3D, o busto do
-  detetive que gira na capa e a fatia de pizza ao lado do culpado (modelos GLB gerados no
-  Higgsfield a partir de imagem própria, embutidos em base64 para abrir também direto do
-  arquivo). Se o 3D não carregar, fica o desenho.
+  detetive que gira na capa, com a coruja no ombro (a coruja é a mascote do Prolog), e a fatia
+  de pizza ao lado do culpado (modelos GLB gerados no Higgsfield a partir de imagem própria,
+  embutidos em base64 para abrir também direto do arquivo). Se o 3D não carregar, fica o
+  desenho; na capa, fica o retrato.
+- Modo foto: a tecla `M` ou o botão Foto troca o busto em 3D da capa por um retrato de estúdio
+  do detetive com a coruja no ombro (`img/detetive-coruja.jpg`, gerado no Higgsfield; é uma
+  pessoa inventada). A escolha fica guardada no navegador. Para abrir já em um dos dois, ponha
+  `?foto=1` (retrato) ou `?foto=0` (3D) no endereço, antes do `#`. Em modo foto o modelo 3D do
+  busto nem é baixado.
 - `vendor/`: `mqtt.min.js` (MQTT.js 5.16.1, MIT), `qrcode.js` (qrcode-generator 1.5.2, MIT) e
   `model-viewer-umd.min.js` (@google/model-viewer 4.4.0, Apache-2.0).
 - `img/ambiente-prolog.webp`: a captura do ambiente, tirada do material.

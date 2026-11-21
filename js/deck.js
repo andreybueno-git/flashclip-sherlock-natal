@@ -497,6 +497,7 @@
       case 'End': e.preventDefault(); mostrar(ordem.length - 1, 0); break;
       case 'o': case 'O': e.preventDefault(); abrirOrganizar(); break;
       case 'f': case 'F': e.preventDefault(); telaCheia(); break;
+      case 'm': case 'M': if (!window.MODO_FOTO) return; e.preventDefault(); window.MODO_FOTO.alternar(); break;
       case '?': e.preventDefault(); alternarAjuda(); break;
       default: return;
     }
