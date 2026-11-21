@@ -49,6 +49,17 @@
 
   window.icone = function (nome, classe) { return window.ARTE.usar(nome, classe); };
 
+  /* Pasta de arquivo em 3D: fechada, mostra a capa com o carimbo; aberta, mostra o que tem dentro.
+     o: {aba, capa, dentro, abre (etapa em que abre; sem isso abre ao entrar no slide), classe, classeDentro, tag} */
+  window.pasta = function (o) {
+    var tag = o.tag || 'li';
+    return '<' + tag + ' class="pasta pasta3d ' + (o.classe || '') + '"' + (o.abre ? ' data-abre="' + o.abre + '"' : ' data-abre="0"') + '>' +
+      '<span class="pasta__aba">' + o.aba + '</span>' +
+      '<div class="pasta__capa ' + (o.classeDentro || '') + '">' + o.dentro + '</div>' +
+      '<div class="pasta__tampa" aria-hidden="true"><div class="pasta__frente"><span class="confidencial">Confidencial</span>' + (o.capa || '') + '</div><div class="pasta__verso"></div></div>' +
+      '</' + tag + '>';
+  };
+
   var SELOS = {
     aula: '<span class="selo selo--aula">Exemplo de aula</span>',
     caso: '<span class="selo selo--caso">A noite do crime</span>'

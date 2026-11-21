@@ -25,11 +25,12 @@
 
   folha('roteiro', {
     kicker: 'Roteiro', titulo: 'O que vamos ver hoje',
+    etapas: 3,
     corpo: `
       <ol class="grade g3 pastas">
-        <li class="pasta"><span class="pasta__aba">Pasta n.º 1</span><div class="pasta__capa"><span class="confidencial">Confidencial</span><h3>Fundamentos</h3><p>Algoritmo, linguagem de programação, compilador, variável e tipos de dados.</p></div></li>
-        <li class="pasta"><span class="pasta__aba">Pasta n.º 2</span><div class="pasta__capa"><span class="confidencial">Confidencial</span><h3>Prolog</h3><p>Fatos, regras e consultas: dar pistas ao computador e deixar que ele descubra a resposta.</p></div></li>
-        <li class="pasta"><span class="pasta__aba">Pasta n.º 3</span><div class="pasta__capa"><span class="confidencial">Confidencial</span><h3>O caso</h3><p><em>A noite do crime</em>: a atividade central, que resolvemos juntos do começo ao fim da aula.</p></div></li>
+        ${pasta({ aba: 'Pasta n.º 1', abre: 1, capa: '<h3>Fundamentos</h3>', dentro: '<h3>Fundamentos</h3><p>Algoritmo, linguagem de programação, compilador, variável e tipos de dados.</p>' })}
+        ${pasta({ aba: 'Pasta n.º 2', abre: 2, capa: '<h3>Prolog</h3>', dentro: '<h3>Prolog</h3><p>Fatos, regras e consultas: dar pistas ao computador e deixar que ele descubra a resposta.</p>' })}
+        ${pasta({ aba: 'Pasta n.º 3', abre: 3, capa: '<h3>O caso</h3>', dentro: '<h3>O caso</h3><p><em>A noite do crime</em>: a atividade central, que resolvemos juntos do começo ao fim da aula.</p>' })}
       </ol>`
   });
 

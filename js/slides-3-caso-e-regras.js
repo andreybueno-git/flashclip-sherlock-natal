@@ -19,17 +19,10 @@ estava(bia, cozinha).`;
     etapas: 2,
     corpo: `
       <div class="crime">
-        <div class="pasta crime__pasta" aria-hidden="true">
-          <span class="pasta__aba">Caso n.º 1</span>
-          <div class="pasta__capa">
-            <span class="confidencial">Confidencial</span>
-            <div class="crime__mesa">
-              ${icone('prato', 'crime__prato')}
-              ${icone('pizza', 'crime__pizza')}
-              <span class="crime__sumiu">?</span>
-            </div>
-          </div>
-        </div>
+        ${pasta({
+          tag: 'div', aba: 'Caso n.º 1', classe: 'crime__pasta', capa: '<h3>A noite do crime</h3>',
+          dentro: '<div class="crime__mesa">' + icone('prato', 'crime__prato') + icone('pizza', 'crime__pizza') + '<span class="crime__sumiu">?</span></div>'
+        })}
         ${ARTE.gravura({ w: 1700, h: 260, classe: 'parte__faixa', lua: [860, 80, 52], torre: .46, semente: 1225 })}
         <div class="crime__breu" aria-hidden="true"></div>
         <div class="crime__texto">
@@ -41,11 +34,14 @@ estava(bia, cozinha).`;
   });
 
   function suspeito(nome, quem, n) {
-    return '<li class="pasta suspeito"><span class="pasta__aba">' + quem + ' nº ' + n + '</span><div class="pasta__capa"><span class="confidencial">Confidencial</span>' +
-      '<span class="clipe" aria-hidden="true"></span>' + icone('retrato-' + nome.toLowerCase(), 'retrato') + '<h3>' + nome + '</h3></div></li>';
+    return pasta({
+      aba: quem + ' nº ' + n, abre: n, classe: 'suspeito',
+      capa: '<h3>' + quem + ' nº ' + n + '</h3>',
+      dentro: '<span class="clipe" aria-hidden="true"></span>' + icone('retrato-' + nome.toLowerCase(), 'retrato') + '<h3>' + nome + '</h3>'
+    });
   }
   folha('suspeitos', {
-    kicker: 'O caso · Os suspeitos', titulo: 'Os três suspeitos', selo: 'caso',
+    kicker: 'O caso · Os suspeitos', titulo: 'Os três suspeitos', selo: 'caso', etapas: 3,
     corpo: `
       <ol class="grade g3 suspeitos">
         ${suspeito('Ana', 'Suspeita', 1)}${suspeito('Leo', 'Suspeito', 2)}${suspeito('Bia', 'Suspeita', 3)}
@@ -54,11 +50,14 @@ estava(bia, cozinha).`;
   });
 
   function ficha(nome, gosta, estava) {
-    return '<li class="pasta"><span class="pasta__aba">Ficha · ' + nome + '</span><div class="pasta__capa ficha"><span class="confidencial">Confidencial</span>' + icone('retrato-' + nome.toLowerCase(), 'retrato') +
-      '<h3>' + nome + '</h3><dl><dt>Gosta de</dt><dd>' + gosta + '</dd><dt>Estava na</dt><dd>' + estava + '</dd></dl></div></li>';
+    return pasta({
+      aba: 'Ficha · ' + nome, abre: { Ana: 1, Leo: 2, Bia: 3 }[nome], classeDentro: 'ficha',
+      capa: '<h3>' + nome + '</h3>',
+      dentro: icone('retrato-' + nome.toLowerCase(), 'retrato') + '<h3>' + nome + '</h3><dl><dt>Gosta de</dt><dd>' + gosta + '</dd><dt>Estava na</dt><dd>' + estava + '</dd></dl>'
+    });
   }
   folha('arquivo', {
-    kicker: 'O caso · O arquivo', titulo: 'O que sabemos de cada um', selo: 'caso',
+    kicker: 'O caso · O arquivo', titulo: 'O que sabemos de cada um', selo: 'caso', etapas: 3,
     corpo: `
       <ul class="grade g3 fichas">
         ${ficha('Ana', 'pizza', 'biblioteca')}${ficha('Leo', 'pizza', 'cozinha')}${ficha('Bia', 'sushi', 'cozinha')}
